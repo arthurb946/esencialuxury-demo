@@ -36,7 +36,7 @@
       --container:    1200px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; margin: 0; padding: 0; }
 
     body {
       background: var(--bg);
@@ -45,6 +45,8 @@
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
     /* ── Nav ── */
@@ -76,7 +78,6 @@
     .nav__logo-img {
       height: 44px;
       width: auto;
-      filter: brightness(0) invert(1);
       opacity: 0.92;
       transition: opacity 0.3s ease;
     }
@@ -141,19 +142,18 @@
       overflow: hidden;
       display: flex;
       align-items: flex-end;
+      left: 0;
     }
 
     .hero__video {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100svh;
       object-fit: cover;
       object-position: center center;
+      display: block;
     }
 
     .hero__overlay {
@@ -631,7 +631,7 @@
   <!-- ── Navigation ── -->
   <nav id="nav">
     <a href="/" class="nav__logo">
-      <img src="logo.png" alt="Esencia Luxury Menorca" class="nav__logo-img" />
+      <img src="logo_white.png" alt="Esencia Luxury Menorca" class="nav__logo-img" />
     </a>
     <ul class="nav__links">
       <li><a href="#services">Experiences</a></li>
