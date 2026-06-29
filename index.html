@@ -68,14 +68,20 @@
     }
 
     .nav__logo {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 300;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text);
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
+
+    .nav__logo-img {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav__logo:hover .nav__logo-img { opacity: 1; }
 
     .nav__links {
       display: flex;
@@ -129,6 +135,7 @@
     /* ── Hero ── */
     .hero {
       position: relative;
+      width: 100vw;
       height: 100svh;
       min-height: 600px;
       overflow: hidden;
@@ -138,11 +145,15 @@
 
     .hero__video {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
       object-fit: cover;
-      object-position: center;
+      object-position: center center;
     }
 
     .hero__overlay {
@@ -360,12 +371,15 @@
       cursor: pointer;
     }
 
+    /* Service card images */
     .service-card__img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      /* placeholder colours per card */
     }
 
     .service-card:hover .service-card__img {
@@ -616,7 +630,9 @@
 
   <!-- ── Navigation ── -->
   <nav id="nav">
-    <a href="/" class="nav__logo">Esencia</a>
+    <a href="/" class="nav__logo">
+      <img src="logo.png" alt="Esencia Luxury Menorca" class="nav__logo-img" />
+    </a>
     <ul class="nav__links">
       <li><a href="#services">Experiences</a></li>
       <li><a href="#about">About</a></li>
@@ -659,8 +675,8 @@
   <!-- ── Statement ── -->
   <section class="statement">
     <p class="statement__text reveal">
-      We don't arrange holidays.<br>
-      We curate <em>escapes</em> — built around you,<br>known only to those who know where to look.
+      Curated experiences.<br>
+      <em>Privately designed.</em>
     </p>
   </section>
 
@@ -674,8 +690,8 @@
     <div class="services__grid">
 
       <div class="service-card service-card--villas reveal">
-        <!-- REPLACE: Infinity pool / villa exterior image from their Instagram -->
-        <div class="service-card__img" style="background: linear-gradient(135deg, #1a2a3a 0%, #0d1520 100%);"></div>
+        <!-- Villas card — modernist villa exterior -->
+        <img src="villas_top.png" alt="Private villa Menorca" class="service-card__img" loading="lazy" />
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
           <span class="service-card__num">01</span>
@@ -685,8 +701,8 @@
       </div>
 
       <div class="service-card service-card--boats reveal reveal--delay-1">
-        <!-- REPLACE: Aerial yacht image from their Instagram -->
-        <div class="service-card__img" style="background: linear-gradient(135deg, #0a1828 0%, #071020 100%);"></div>
+        <!-- Boats card — marina aerial -->
+        <img src="boats.png" alt="Private boats Menorca" class="service-card__img" loading="lazy" />
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
           <span class="service-card__num">02</span>
@@ -696,8 +712,8 @@
       </div>
 
       <div class="service-card service-card--experiences reveal reveal--delay-2">
-        <!-- REPLACE: Curated experience / sunset image from their Instagram -->
-        <div class="service-card__img" style="background: linear-gradient(135deg, #1a1f2e 0%, #0f1420 100%);"></div>
+        <!-- Experiences card — infinity pool / sea view -->
+        <img src="villas_bottom.png" alt="Curated experiences Menorca" class="service-card__img" loading="lazy" />
         <div class="service-card__overlay"></div>
         <div class="service-card__content">
           <span class="service-card__num">03</span>
@@ -737,7 +753,9 @@
 
   <!-- ── Footer ── -->
   <footer>
-    <a href="/" class="footer__logo">Esencia</a>
+    <a href="/" class="footer__logo">
+      <img src="logo.png" alt="Esencia" style="height:36px;width:auto;filter:brightness(0) invert(1);opacity:0.5;" />
+    </a>
     <ul class="footer__links">
       <li><a href="#services">Experiences</a></li>
       <li><a href="https://www.instagram.com/esencialuxurymenorca/" target="_blank">Instagram</a></li>
